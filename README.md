@@ -32,11 +32,13 @@ The Python program uses the Flask framework to create a web server that listens 
    - Install the "Push Notification Forward HTTP" app on your Android phone.
     - Set up the app to forward notifications from your Eufy camera app to the endpoint `http://<your_server_ip>:69/push-notification`.
     - Include the API key in the request form.
+   ![request_form](https://github.com/cusinbs/smart-switch-api/assets/20715034/9efdeaa8-2fc8-4af5-b809-d202f396b04e)
 
 3. **Set Up Static IP and Port Forwarding:**:
    - Ensure your Raspberry Pi or hosting device has a static IP address to maintain consistent access.
     - Depending on your router, configure port forwarding for the hosting device to allow external access to your dedicated port.
-    
+    ![Portforward](https://github.com/cusinbs/smart-switch-api/assets/20715034/765282d6-4f7c-4013-98eb-446f4210df60)
+
 ## Security Considerations
 
 During testing, I noticed some malicious attempts to spoof the endpoints. To mitigate this, ensure that:
