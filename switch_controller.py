@@ -63,9 +63,11 @@ def push_notification():
         logging.error("Invalid API key")
         return jsonify({"error": "Unauthorized"}), 401
     
-    # Check if the title contains the word "Doorbell" or "Garage"
+    # Check if the notification contains the word "Doorbell" or "Garage"
     title = form_data.get("title", "").lower()
-    if "garage" in title or "doorbell" in title:
+    text = form_data.get("text", "").lower()
+
+    if "garage" in text or "doorbell" in title:
         porch_light_switch.turn_on_for_duration()
 
     # Return 200 OK without form data
