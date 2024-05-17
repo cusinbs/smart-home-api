@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
 
-API_KEY = "018f83d0-b896-710c-b0b2-3bef02463ac5"  # Replace with your actual API key
+API_KEY = "SOME UUID"  # Replace with your actual API key
 
 class SmartSwitchController:
     def __init__(self, ip_address, on_duration=120):
@@ -65,7 +65,7 @@ def push_notification():
     
     # Check if the title contains the word "Doorbell" or "Garage"
     title = form_data.get("title", "").lower()
-    if title in ["garage", "doorbell"]:
+    if "garage" in title or "doorbell" in title:
         porch_light_switch.turn_on_for_duration()
 
     # Return 200 OK without form data
