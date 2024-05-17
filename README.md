@@ -18,6 +18,7 @@ I then developed a small API in Python to handle these HTTP requests from that a
 
 The Python program uses the Flask framework to create a web server that listens for POST requests. When a POST request is received with specific keywords ("doorbell" or "garage") in the title, the program turns on a smart switch for a specified duration (default is 2 minutes). The program also includes basic API key authentication to enhance security.
 
+To ensure responsiveness and prevent blocking the main thread, threading is utilized. This allows the program to handle multiple requests concurrently without interfering with each other, ensuring smooth operation if we decide to expand the endpoint to multiple switches/devices in the future.
 ## How to Set Up
 
 1. **Install Dependencies**:
